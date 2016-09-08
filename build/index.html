@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui, user-scalable=no">
+    <title>Space Invaders</title>
+    <link rel="stylesheet" href="styles/vendor.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/ico" href="favicon.ico">
+  </head>
+  <body>
+    <header role="header" class="header static"></header>
+    <section class="game">
+      <div class="game__wrapper">
+        <div id="menu" class="game__menu">
+          <h1 class="game__title">Space <span>Invaders</span></h1>
+          <div class="game__rules">
+            <div class="game__icons"><img src="./images/sprite.png"><img src="./images/sprite.png"><img src="./images/sprite.png"><img src="./images/sprite.png"></div>
+            <div class="game__score">
+              <p>
+                 
+                = 10 pts
+              </p>
+              <p>
+                 
+                = 20 pts
+              </p>
+              <p>
+                 
+                = 40 pts
+              </p>
+              <p>
+                 
+                = ??? pts
+              </p>
+            </div>
+          </div><span id="startgame" class="game__start">Play Game</span>
+        </div>
+        <div id="gamezone" class="game__gamezone"></div>
+      </div>
+    </section>
+    <footer class="footer"></footer>
+  </body>
+  <script src="scripts/vendor.js"></script>
+  <script src="scripts/app.js"></script>
+</html>

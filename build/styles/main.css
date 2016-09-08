@@ -1,0 +1,95 @@
+@font-face {
+  font-family: 'Cosmic Alien';
+  src: url("../fonts/ca.ttf");
+  font-weight: 700;
+  font-style: normal; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  font: 300 14px/1 'Cosmic Alien', Helvetica, Arial, sans-serif;
+  letter-spacing: 0.005em; }
+
+.game {
+  width: 100vw;
+  height: 100vh;
+  background: #031421; }
+  .game__wrapper {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 640px;
+    height: 480px;
+    background: #000; }
+  .game__menu {
+    /*display: none;*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    color: #fff;
+    background: #000;
+    text-align: center;
+    padding-top: 40px;
+    font-size: 18px;
+    line-height: 25px;
+    vertical-align: middle; }
+  .game__rules {
+    margin-bottom: 60px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  .game__icons {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+    margin: 0 10px; }
+    .game__icons img {
+      object-fit: none;
+      width: 32px;
+      height: 25px;
+      margin: 0 auto 10px; }
+      .game__icons img:nth-child(1) {
+        object-position: 0 -12px; }
+      .game__icons img:nth-child(2) {
+        object-position: -70px -12px; }
+      .game__icons img:nth-child(3) {
+        object-position: -103px -12px; }
+      .game__icons img:nth-child(4) {
+        width: 55px;
+        object-position: -212px -12px; }
+  .game__score {
+    text-align: left; }
+    .game__score p {
+      margin: 0 0 10px; }
+  .game__start {
+    font-size: 32px;
+    color: #00fc00;
+    cursor: pointer; }
+  .game__title {
+    font-size: 32px;
+    line-height: 32px; }
+    .game__title span {
+      color: #00fc00;
+      display: block; }
+  .game__info {
+    position: absolute;
+    color: #fff; }
+  .game__gamezone {
+    width: 640px;
+    height: 480px; }
+
+/*# sourceMappingURL=main.css.map */
