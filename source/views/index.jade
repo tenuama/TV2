@@ -11,8 +11,31 @@ html
     title #{title}
     link(rel="stylesheet", href="styles/vendor.css")
     link(rel="stylesheet", href="styles/main.css")
-    //- link(rel="icon" type="image/png" href="images/favicon.png")
+    link(rel="icon" type="image/ico" href="favicon.ico")
   body
     header.header.static(role="header")
-    section
+    section.game
+      div.game__wrapper
+        div#menu.game__menu
+          h1.game__title Space 
+            span Invaders
+          div.game__rules
+            div.game__icons
+              img(src='./images/sprite.png')
+              img(src='./images/sprite.png')
+              img(src='./images/sprite.png')
+              img(src='./images/sprite.png')
+            div.game__score
+              p 
+                |= 10 pts
+              p 
+                |= 20 pts
+              p 
+                |= 40 pts
+              p 
+                |= ??? pts
+          span#startgame.game__start Play Game
+        div#gamezone.game__gamezone
     footer.footer
+  script(src="scripts/vendor.js")
+  script(src="scripts/app.js")

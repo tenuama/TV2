@@ -22,6 +22,7 @@ var
   jade = require('gulp-jade'),
   sass = require('gulp-sass'),
   prefix = require('gulp-autoprefixer'),
+  babel = require('gulp-babel'),
   watch = require('gulp-watch'),
   connect = require('gulp-connect'),
   livereload = require('gulp-livereload');
@@ -37,6 +38,7 @@ gulp.task('scripts', function() {
     ])
     .pipe(sourcemaps.init())
     .pipe(concat('app.js'))
+    .pipe(babel())
     .on('error', onError)
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(properties.folders.build + '/scripts'))

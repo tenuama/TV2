@@ -1,0 +1,100 @@
+.game {
+    width: 100vw;
+    height: 100vh;
+    background: $black;
+
+    &__wrapper {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 640px;
+        height: 480px;
+        background: $ultraBlack;
+    }
+
+    &__menu {
+        /*display: none;*/
+        position: absolute; 
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        color: $white;
+        background: $ultraBlack;
+        text-align: center;
+        padding-top: 40px;
+        font-size: 18px;
+        line-height: 25px;
+        vertical-align: middle;
+    }
+
+    &__rules {
+        margin-bottom: 60px;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__icons {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin: 0 10px;
+
+        img {
+            object-fit: none;
+            width: 32px;
+            height: 25px;
+            margin: 0 auto 10px;
+
+            &:nth-child(1) {
+                object-position: 0 -12px;
+            }
+            &:nth-child(2) {
+                object-position: -70px -12px;
+            }
+            &:nth-child(3) {
+                object-position: -103px -12px;
+            }
+            &:nth-child(4) {
+                width: 55px;
+                object-position: -212px -12px;
+            }
+        }
+    }
+
+    &__score {
+        text-align: left;
+        
+        p {
+            margin: 0 0 10px;
+        }
+    } 
+
+    &__start {
+        font-size: 32px;
+        color: $green;
+        cursor: pointer;
+    }
+
+    &__title {
+        font-size: 32px;
+        line-height: 32px;
+
+        span {
+            color: $green;
+            display: block;
+        }
+    }
+
+    &__info {
+        position: absolute;
+        color: $white;
+    }
+
+    &__gamezone {
+        width: 640px;
+        height: 480px;
+    }
+}
