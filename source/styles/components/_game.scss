@@ -42,24 +42,20 @@
         text-align: center;
         margin: 0 10px;
 
-        img {
-            object-fit: none;
-            width: 32px;
-            height: 25px;
-            margin: 0 auto 10px;
+        div {
+            width: 28px;
+            height: 20px;
+            margin: 4px auto 10px;
+            background: url('../images/sprite-small2.png') no-repeat;
 
             &:nth-child(1) {
-                object-position: 0 -12px;
+                background-position: 0 0;
             }
             &:nth-child(2) {
-                object-position: -70px -12px;
+                background-position: -28px 0;
             }
             &:nth-child(3) {
-                object-position: -103px -12px;
-            }
-            &:nth-child(4) {
-                width: 55px;
-                object-position: -212px -12px;
+                background-position: -56px 0;
             }
         }
     }

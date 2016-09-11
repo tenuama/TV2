@@ -18,7 +18,7 @@ var crush, pewSound, boom, win, endGame;
 class Menu {
     constructor() {
         let t = this;
-        $('#startgame').on('click', function () {
+        $('#startgame').on('click tap', function () {
             t.start();
         });
     }

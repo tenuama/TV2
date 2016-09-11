@@ -57,20 +57,17 @@ body {
             flex-direction: column;
     text-align: center;
     margin: 0 10px; }
-    .game__icons img {
-      object-fit: none;
-      width: 32px;
-      height: 25px;
-      margin: 0 auto 10px; }
-      .game__icons img:nth-child(1) {
-        object-position: 0 -12px; }
-      .game__icons img:nth-child(2) {
-        object-position: -70px -12px; }
-      .game__icons img:nth-child(3) {
-        object-position: -103px -12px; }
-      .game__icons img:nth-child(4) {
-        width: 55px;
-        object-position: -212px -12px; }
+    .game__icons div {
+      width: 28px;
+      height: 20px;
+      margin: 4px auto 10px;
+      background: url("../images/sprite-small2.png") no-repeat; }
+      .game__icons div:nth-child(1) {
+        background-position: 0 0; }
+      .game__icons div:nth-child(2) {
+        background-position: -28px 0; }
+      .game__icons div:nth-child(3) {
+        background-position: -56px 0; }
   .game__score {
     text-align: left; }
     .game__score p {
