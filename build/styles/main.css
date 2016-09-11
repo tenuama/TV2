@@ -75,7 +75,7 @@ body {
     text-align: left; }
     .game__score p {
       margin: 0 0 10px; }
-  .game__start {
+  .game__play {
     font-size: 32px;
     color: #00fc00;
     cursor: pointer; }
@@ -91,5 +91,13 @@ body {
   .game__gamezone {
     width: 640px;
     height: 480px; }
+  .game__start, .game__end {
+    display: none; }
+    .game__start.active, .game__end.active {
+      display: block; }
+  .game__endgame {
+    font-size: 45px;
+    margin-top: 80px;
+    margin-bottom: 40px; }
 
 /*# sourceMappingURL=main.css.map */

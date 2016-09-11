@@ -15,27 +15,29 @@
       <div class="game__wrapper">
         <div id="menu" class="game__menu">
           <h1 class="game__title">Space <span>Invaders</span></h1>
-          <div class="game__rules">
-            <div class="game__icons"><img src="./images/sprite.png"><img src="./images/sprite.png"><img src="./images/sprite.png"><img src="./images/sprite.png"></div>
-            <div class="game__score">
-              <p>
-                 
-                = 10 pts
-              </p>
-              <p>
-                 
-                = 20 pts
-              </p>
-              <p>
-                 
-                = 40 pts
-              </p>
-              <p>
-                 
-                = ??? pts
-              </p>
-            </div>
-          </div><span id="startgame" class="game__start">Play Game</span>
+          <div class="game__start active">
+            <div class="game__rules">
+              <div class="game__icons"><img src="./images/sprite.png"><img src="./images/sprite.png"><img src="./images/sprite.png"></div>
+              <div class="game__score">
+                <p>
+                   
+                  = 10 pts
+                </p>
+                <p>
+                   
+                  = 20 pts
+                </p>
+                <p>
+                   
+                  = 30 pts
+                </p>
+              </div>
+            </div><span id="startgame" class="game__play">Play Game</span>
+          </div>
+          <div class="game__end">
+            <p class="game__endgame">End game!</p>
+            <p class="game__youscore">Your score: <span></span></p>
+          </div>
         </div>
         <div id="gamezone" class="game__gamezone"></div>
       </div>

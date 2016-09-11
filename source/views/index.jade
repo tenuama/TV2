@@ -19,22 +19,24 @@ html
         div#menu.game__menu
           h1.game__title Space 
             span Invaders
-          div.game__rules
-            div.game__icons
-              img(src='./images/sprite.png')
-              img(src='./images/sprite.png')
-              img(src='./images/sprite.png')
-              img(src='./images/sprite.png')
-            div.game__score
-              p 
-                |= 10 pts
-              p 
-                |= 20 pts
-              p 
-                |= 40 pts
-              p 
-                |= ??? pts
-          span#startgame.game__start Play Game
+          div.game__start.active
+            div.game__rules
+              div.game__icons
+                img(src='./images/sprite.png')
+                img(src='./images/sprite.png')
+                img(src='./images/sprite.png')
+              div.game__score
+                p 
+                  |= 10 pts
+                p 
+                  |= 20 pts
+                p 
+                  |= 30 pts
+            span#startgame.game__play Play Game
+          div.game__end
+            p.game__endgame End game!
+            p.game__youscore Your score: 
+              span
         div#gamezone.game__gamezone
     footer.footer
   script(src="scripts/vendor.js")
