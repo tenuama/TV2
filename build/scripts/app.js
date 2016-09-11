@@ -18,7 +18,10 @@ var crush, pewSound, boom, win, endGame;
 class Menu {
     constructor() {
         let t = this;
-        $('#startgame').on('click tap', function () {
+        // $('#startgame').on('click tap', function() {
+        //     t.start();
+        // });
+        $('#menu').on('click tap', function () {
             t.start();
         });
     }
@@ -240,6 +243,11 @@ function updateAll() {
             var a = monsters[Math.round(Math.random() * (monsters.length - 1))];
             pews.push(new Pew("alarm", a.x + 15, a.y + 15 + 30, 4));
         }
+
+        $('#gamezone').on('tap', function () {
+            pews.push(new Pew("", lazer.x + lazer.w / 2, lazer.y + 2, -8));
+            pewSound.play();
+        });
     }
 
     $.each(pews, function (index, value) {
