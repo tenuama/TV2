@@ -1,3 +1,9 @@
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 var menu, gamezone, input;
 var lazer,
     monsters = [],
@@ -15,9 +21,11 @@ var frames,
     animate = true;
 var crush, pewSound, boom, win, endGame;
 
-class Menu {
-    constructor() {
-        let t = this;
+var Menu = function () {
+    function Menu() {
+        _classCallCheck(this, Menu);
+
+        var t = this;
         // $('#startgame').on('click tap', function() {
         //     t.start();
         // });
@@ -25,35 +33,45 @@ class Menu {
             t.start();
         });
     }
-    start() {
-        $('#menu').fadeOut(function () {
-            gamezone = new Gamezone(640, 480);
-            init(function () {
-                window.requestAnimationFrame(loop, gamezone.canvas);
+
+    _createClass(Menu, [{
+        key: 'start',
+        value: function start() {
+            $('#menu').fadeOut(function () {
+                gamezone = new Gamezone(640, 480);
+                init(function () {
+                    window.requestAnimationFrame(loop, gamezone.canvas);
+                });
             });
-        });
-    }
-    end() {
-        window.cancelAnimationFrame(loop, gamezone.canvas);
-        animate = false;
+        }
+    }, {
+        key: 'end',
+        value: function end() {
+            window.cancelAnimationFrame(loop, gamezone.canvas);
+            animate = false;
 
-        $('.game__start').removeClass('active');
-        $('.game__youscore span').text(score);
-        $('.game__end').addClass('active');
-        $('#menu').fadeIn(function () {
+            $('.game__start').removeClass('active');
+            $('.game__youscore span').text(score);
+            $('.game__end').addClass('active');
+            $('#menu').fadeIn(function () {
 
-            if (globalLives > 0) {
-                win.play();
-            } else {
-                endGame.play();
-            }
-        });
-    }
-}
+                if (globalLives > 0) {
+                    win.play();
+                } else {
+                    endGame.play();
+                }
+            });
+        }
+    }]);
 
-class Gamezone {
-    constructor(width, height) {
-        let t = this;
+    return Menu;
+}();
+
+var Gamezone = function () {
+    function Gamezone(width, height) {
+        _classCallCheck(this, Gamezone);
+
+        var t = this;
         t.canvas = document.createElement("canvas");
         t.context = t.canvas.getContext("2d");
         t.canvas.width = t.width = width;
@@ -61,38 +79,50 @@ class Gamezone {
 
         $("#gamezone").append(this.canvas);
     }
-    draw(img, x, y) {
-        this.context.drawImage(img.img, img.x, img.y, img.w, img.h, x, y, img.w, img.h);
-    }
-    drawPew(pew) {
-        let t = this;
 
-        if (pew.type === "alarm") {
-            t.draw(pew.img, pew.x, pew.y);
-        } else {
-            t.context.fillStyle = "#00fc00";
-            t.context.fillRect(pew.x, pew.y, pew.w, pew.h);
+    _createClass(Gamezone, [{
+        key: 'draw',
+        value: function draw(img, x, y) {
+            this.context.drawImage(img.img, img.x, img.y, img.w, img.h, x, y, img.w, img.h);
         }
-    }
-    clear() {
-        this.context.clearRect(0, 0, this.width, this.height);
-    }
-}
+    }, {
+        key: 'drawPew',
+        value: function drawPew(pew) {
+            var t = this;
 
-class Img {
-    constructor(img, x, y, w, h) {
-        let t = this;
-        t.img = img;
-        t.x = x;
-        t.y = y;
-        t.w = w;
-        t.h = h;
-    }
-}
+            if (pew.type === "alarm") {
+                t.draw(pew.img, pew.x, pew.y);
+            } else {
+                t.context.fillStyle = "#00fc00";
+                t.context.fillRect(pew.x, pew.y, pew.w, pew.h);
+            }
+        }
+    }, {
+        key: 'clear',
+        value: function clear() {
+            this.context.clearRect(0, 0, this.width, this.height);
+        }
+    }]);
 
-class InputHandeler {
-    constructor() {
-        let t = this;
+    return Gamezone;
+}();
+
+var Img = function Img(img, x, y, w, h) {
+    _classCallCheck(this, Img);
+
+    var t = this;
+    t.img = img;
+    t.x = x;
+    t.y = y;
+    t.w = w;
+    t.h = h;
+};
+
+var InputHandeler = function () {
+    function InputHandeler() {
+        _classCallCheck(this, InputHandeler);
+
+        var t = this;
         t.down = {};
         t.pressed = {};
 
@@ -104,23 +134,33 @@ class InputHandeler {
             delete t.pressed[e.keyCode];
         });
     }
-    isDown(code) {
-        return this.down[code];
-    }
-    isPressed(code) {
-        let t = this;
-        if (t.pressed[code]) {
-            return false;
-        } else if (t.down[code]) {
-            return t.pressed[code] = true;
-        }
-        return false;
-    }
-}
 
-class Pew {
-    constructor(type, x, y, v) {
-        let t = this;
+    _createClass(InputHandeler, [{
+        key: 'isDown',
+        value: function isDown(code) {
+            return this.down[code];
+        }
+    }, {
+        key: 'isPressed',
+        value: function isPressed(code) {
+            var t = this;
+            if (t.pressed[code]) {
+                return false;
+            } else if (t.down[code]) {
+                return t.pressed[code] = true;
+            }
+            return false;
+        }
+    }]);
+
+    return InputHandeler;
+}();
+
+var Pew = function () {
+    function Pew(type, x, y, v) {
+        _classCallCheck(this, Pew);
+
+        var t = this;
         t.type = type;
         t.x = x;
         t.y = y;
@@ -135,13 +175,19 @@ class Pew {
             t.h = 16;
         }
     }
-    update() {
-        let t = this;
-        t.y += t.v;
-    }
-}
 
-var loop = function () {
+    _createClass(Pew, [{
+        key: 'update',
+        value: function update() {
+            var t = this;
+            t.y += t.v;
+        }
+    }]);
+
+    return Pew;
+}();
+
+var loop = function loop() {
     updateAll();
     drawAll();
     if (animate) {
